@@ -1,8 +1,9 @@
 //jshint esversion:6
 
-// installation essentials
+// essentials
 const express = require("express");
 const bodyParser = require("body-parser"); 
+const mongoose = require('mongoose');
 const ejs = require("ejs");
 const _ = require("lodash");
 
@@ -23,6 +24,15 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
+
+
+// MONGOOSE CONNECT
+mongoose.connect("mongodb+srv://admin-john:test123@cluster0.aribk.mongodb.net/blogDB", {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+});
+
+
 
 
 // Global Variable (use "let" as safer version than "var")
