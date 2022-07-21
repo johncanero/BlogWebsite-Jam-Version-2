@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const ejs = require("ejs");
 const _ = require("lodash");
 
+
 // contents
 const homeStartingContent =
   "I created this journal guided by Angela Yu while studying her Web Development Bootcamp Course. This would be a great journey for me to document my life and adventures especially in the world of technology.";
@@ -95,25 +96,22 @@ app.post("/compose", function (req, res) {
   });
 
 
+// MONGOOSE - APP.GET (POST METHOD: postId)
 //clicking on readmore on the home screen bring up the post with the id on the url (https://expressjs.com/en/guide/routing.html)
-app.get("/posts/:postName", function (req, res) {
-  // apply npm lodash = lowercase
-  const requestedTitle = _.lowerCase(req.params.postName);
-  // console.log(req.params.postName); = route parameters
+app.get("/posts/:postId", function (req, res) {
+  
+  const requestedPostId = req.params.postId;
 
-  // For Each (Javascript) Array
-  posts.forEach(function (post) {
-    const storedTitle = _.lowerCase(post.title);
-
-    // stric equality
-    if (storedTitle === requestedTitle) {
-      res.render("post", {
-        title: post.title,
-        content: post.content,
-      });
-    }
+  Post.findOne({_id: requestedPostId}, function(err, post){
+    res.render("post", {
+      title: post.title,
+      content: post.content
+    });
   });
+
 });
+
+
 
 // essentials: running server
 app.listen(process.env.PORT || 3000, function () {

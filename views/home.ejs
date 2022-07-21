@@ -24,7 +24,7 @@
             <h1><%=post.title%></h1>
             <!-- Truncate a string -->
             <p><%=post.content.substring(0, 100) + " ..." %>
-                <a href="/posts/<%=post.title%>">Read More</a>
+                <a href="/posts/<%=post._id%>">Read More</a>
             </p>
         <% }) %>
     </div>
