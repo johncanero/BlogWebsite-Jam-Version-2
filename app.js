@@ -32,7 +32,7 @@ app.use(express.static("public"));
 
 // MONGOOSE CONNECT
 mongoose.connect(
-  "mongodb+srv://admin-john:test123@cluster0.aribk.mongodb.net/blogDB",
+  "mongodb+srv://<username>:<password>@cluster0.aribk.mongodb.net/blogDB",
   {
     useUnifiedTopology: true,
     useNewUrlParser: true,
