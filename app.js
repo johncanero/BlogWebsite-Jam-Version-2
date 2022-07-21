@@ -32,6 +32,11 @@ mongoose.connect("mongodb+srv://admin-john:test123@cluster0.aribk.mongodb.net/bl
     useNewUrlParser: true,
 });
 
+// MONGOOSE - ITEMS SCHEMA
+const postSchema = mongoose.Schema({
+    title: String, 
+    content: String
+});
 
 
 
