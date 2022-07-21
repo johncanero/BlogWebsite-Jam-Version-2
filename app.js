@@ -38,6 +38,8 @@ const postSchema = mongoose.Schema({
     content: String
 });
 
+// MONGOOSE MODEL
+const Post = mongoose.model("Post", postSchema);
 
 
 
