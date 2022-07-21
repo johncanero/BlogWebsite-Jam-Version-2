@@ -48,7 +48,7 @@ const postSchema = mongoose.Schema({
 const Post = mongoose.model("Post", postSchema);
 
 // GET METHOD
-// app.get = the home route (root)
+// MONGOOSE -  RENDER POSTS AT HOME PAGE
 app.get("/", function (req, res) {
   Post.find({}, function (err, posts) {
     if (!err) {
@@ -78,7 +78,7 @@ app.get("/composeJam", function (req, res) {
   res.render("compose");
 });
 
-// POST METHOD
+// MONGOOSE - POST METHOD AND SAVE METHOD
 app.post("/compose", function (req, res) {
   // See compose.ejs
   const post = new Post({
@@ -86,12 +86,14 @@ app.post("/compose", function (req, res) {
     content: req.body.postBody,
   });
 
-  post.save();
-  // Removed  posts.push(post);
+  post.save(function(err){
+    if (!err) {
+      res.redirect("/")
+    }
+  });
 
-  // Redirect to Home Page
-  res.redirect("/");
-});
+  });
+
 
 //clicking on readmore on the home screen bring up the post with the id on the url (https://expressjs.com/en/guide/routing.html)
 app.get("/posts/:postName", function (req, res) {
