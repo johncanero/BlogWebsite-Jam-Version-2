@@ -40,6 +40,8 @@ const postSchema = mongoose.Schema({
 
 
 
+
+
 // Global Variable (use "let" as safer version than "var")
 let posts = [];
 
