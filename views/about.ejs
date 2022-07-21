@@ -1,0 +1,46 @@
+<%- include("partials/header") %>
+
+<div class="justifyContent">
+    <div>
+        <h1>About</h1>
+    </div>
+    
+    <!-- include startingContent -->
+    <p>Hey! Welcome to my journal. You can call me <strong>Jam!</strong> <%= aboutContent %></p>
+    <br>
+    <p><%= aboutContent2 %></p>
+    <br>
+    <p>You could visit my Personal Website I created and Github Profile where you could see more of my projects at the image links below:</p>
+
+    <hr>
+
+    <div class="flex-container1">
+        <div class="githubPadding">
+            <a href="https://johncanero.github.io/JamWebsite/index.html" target="_blank">
+                <img class="johncaneroWebsite" src="/images/johncaneroWebsite.png" alt="johncaneroWebsite.png">
+            </a>  
+                    
+            <div>
+                <p class="fw-lighter">John Cañero Website</p>
+            </div>  
+        </div>
+    </div>
+
+
+    <div class="flex-container1">
+        <div class="githubPadding">
+            <a href="https://github.com/johncanero" target="_blank">
+                <img class="johncaneroWebsite" src="/images/johncaneroGithub.png" alt="johncaneroGithub.png">
+            </a>    
+    
+            <div class="linkPadding">
+                <p class="fw-lighter">Github Profile</p>
+            </div>
+            <br>
+        </div>
+    </div>
+
+ 
+</div>
+
+<%- include("partials/footer") %>

@@ -1,0 +1,31 @@
+<%- include("partials/header") %>
+
+<div class="justifyContent">
+    <!-- Design Compose Message in Bootstrap Form -->
+    <h1>Compose</h1>
+
+    <!-- Multi-line Text Input -->
+    <!-- See Bootstrap Documentation -->
+
+    <form class="" action="/compose" method="post">
+      <div class="mb-3">
+        <label for="postTitle" class="form-label fw-semibold formFontSize">Title</label>
+
+        <!-- name: postTitle -->
+        <input name="postTitle" type="title" class="form-control formPadding" id="postTitle" aria-describedby="postTitle">
+
+        <label for="postBody" class="form-label fw-semibold formFontSize">Post</label>
+        <!-- name: postBody -->
+        <textarea name="postBody" class="form-control postPadding"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary buttonFontSize">Submit</button>
+    </form>
+</div>
+
+
+
+  <!-- postTitle and postBody (console.log at app.js) -->
+
+<%- include("partials/footer") %>
+
+
